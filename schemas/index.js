@@ -1,3 +1,5 @@
 module.exports = {
-    show: require("./show")
+    show: require("./show"),
+    event: require("./event"),
+    organization: require("./organization")
 }

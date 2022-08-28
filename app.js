@@ -1,17 +1,15 @@
 const express = require('express'),
-    path = require('path'),
     timeoutTest = require('express-request-timeout-test');
 
 const router = require("./routes");
 const mongoose = require("mongoose");
-const {mongo, server} = require("./config");
+const { server} = require("./config");
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
-app.use('/public', express.static(path.join(__dirname, 'public')));
 
 const {test_timeout = 160000 } = server;
 app.use(timeoutTest({timeout: test_timeout, check_auth: false}));

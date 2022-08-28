@@ -4,7 +4,7 @@ const showDetail =  async (showId) => {
     try{
         const query = {showId};
         console.log('Controllers: ', query);
-        return  await Show.findOne(query);
+        return  await Show.findOne({showId: query.showId});
     }catch (err){
         console.error("Error : ", err);
     }
